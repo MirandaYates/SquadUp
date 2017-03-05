@@ -1,0 +1,10 @@
+/.classpath
+/.project
+/DAO.class
+/QueryResult.class
+/SocketReader.class
+/SocketWriter.class
+/SquadServer.class
+/SquadService.class
+/spark-core/
+/GroupManager.class
