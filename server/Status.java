@@ -6,14 +6,29 @@ import java.sql.SQLException;
 //Status object has getters and setters
 public class Status extends DAO{
     private int status_code; //use -1, 0, 1 for bad, neutral, good
-    private String status_time;
     
     public int getStatusCode(int u){
-        return this.status_code;
+        String sql = "select status from status where user_id = ?";
+        try{
+            Connection connection = super.getConnection();
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, u);
+            return executeQuery(connection, statement).getRow(0).get(0);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
     
     public String getStatusTime(int u){
-        return this.time_of_last_checkin;
+        String sql = "select datetime from status where user_id = ?";
+        try{
+            Connection connection = super.getConnection();
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, u);
+            return executeQuery(connection, statement).getRow(0).get(0);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
     
     public void setStatusCode(int u, int x){

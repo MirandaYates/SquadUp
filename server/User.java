@@ -32,7 +32,7 @@ public class User extends DAO{
 	public String getGPSTime(){	return gps.getGPSTime(id); }
 
 	//sets status to 's'
-	public setStatus(s){ status.setStatusCode(id, s) }
+	public setStatus(int s){ status.setStatusCode(id, s) }
 	//sets gps to 's'
-	public setGPS(s){ status.setGPS(id, s) }
+	public setGPS(int s){ status.setGPS(id, s) }
 }
