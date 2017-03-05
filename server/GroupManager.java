@@ -7,7 +7,7 @@ public class GroupManager {
   
   
   // Constructors
-  public GroupManger() {
+  public void GroupManger() {
     users = null;
   }
   
