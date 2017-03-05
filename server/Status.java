@@ -24,15 +24,11 @@ public class Status extends DAO{
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, u);
             statement.setString(2, x);
-            this.id = executeQuery(connection, statement).get(0).get(0);
+            executeInsert(connection, statement);
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-    }
-    
-    public void setStatusTime(int u){
-        this.time_of_last_checkin= s;
     }
 }
 
