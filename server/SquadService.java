@@ -4,13 +4,13 @@ import java.net.Socket;
 import java.sql.SQLException;
 
 public class SquadService {
-  public static void main(String[] args) throws SQLException {
+  public static void main(String[] args){
 
     ServerSocket ss = null;
     SquadServer squad_server = new SquadServer();
 
     try {
-      ss = new ServerSocket(1478);
+      ss = new ServerSocket(1313);
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -19,10 +19,12 @@ public class SquadService {
     SocketReader socket_reader = null;
     SocketWriter socket_writer = null;
     String request = null;
-
+    
+    System.out.println("Service Started.");
     while (true) {
       try {
         s = ss.accept();
+        System.out.println("Connection Made.");
       } catch (IOException e) {
         e.printStackTrace();
       }
@@ -33,10 +35,9 @@ public class SquadService {
       socket_writer.write("OK");
       request = socket_reader.read();
 
-      // handle request
-      squad_server.serviceRequest(request);
-
-      // send response
+      System.out.println("request found: " + request);
+      String result = squad_server.serviceRequest(request);
+      socket_writer.write(result);
 
     }
   }

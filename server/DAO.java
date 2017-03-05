@@ -2,9 +2,9 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class DAO{
-	private static final String DB_URL = "";
-	private static final String USERNAME = "";
-	private static final String PASSWORD = "";
+	private static final String DB_URL = "jdbc:mysql://localhost/squadup?useSSL=false";
+	private static final String USERNAME = "root";
+	private static final String PASSWORD = "Ryczak13!";
 
 
 	public DAO(){
@@ -15,7 +15,6 @@ public class DAO{
 	 */
 	public Connection getConnection(){
 		try{
-			System.out.println("QUERY MADE");
 			Class.forName("com.mysql.jdbc.Driver");
 			return DriverManager.getConnection(DB_URL, DAO.USERNAME, DAO.PASSWORD);
 		}catch(Exception e){
