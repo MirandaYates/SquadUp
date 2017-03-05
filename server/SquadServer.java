@@ -34,6 +34,7 @@ public class SquadServer {
       break;
 
     case "create_group":
+      CreateGroup c = new CreateGroup(request);
       break;
 
     case "join_group":
