@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="cordova/hello/platforms/android/cordova/node_modules/properties-parser/test"/>
+	<classpathentry kind="src" path="cordova/hello/platforms/android/CordovaLib/build/generated/source/buildConfig/debug"/>
+	<classpathentry kind="src" path="cordova/hello/platforms/android/CordovaLib/src"/>
+	<classpathentry kind="src" path="cordova/hello/platforms/android/src"/>
+	<classpathentry kind="src" path="spark-master/src/main/java"/>
+	<classpathentry kind="src" path="spark-master/src/test/java"/>
+	<classpathentry kind="lib" path="cordova/hello/platforms/android/CordovaLib/build/intermediates/bundles/debug/classes.jar"/>
+	<classpathentry kind="lib" path="lib/json-simple-1.1.1-2.jar"/>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.39-bin.jar"/>
+	<classpathentry kind="lib" path="spark-master/config/spark-formatter-intellij.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="cordova/hello/platforms/android/CordovaLib/build/intermediates/classes/debug"/>
+</classpath>
