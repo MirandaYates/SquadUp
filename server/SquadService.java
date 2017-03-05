@@ -36,6 +36,7 @@ public class SquadService {
 			squad_server.serviceRequest(request);
 			
 			//send response
+            
 		}
 	}
 }
