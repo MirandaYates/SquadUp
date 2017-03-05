@@ -11,7 +11,7 @@ public class JoinGroup extends DAO{
         super();
     }
     
-    public String joinGroupREquest(String joinGroupMessage) throws SQLException{
+    public String joinGroupRequest(String joinGroupMessage) throws SQLException{
         
         //joins the user to a group
         String[] messageParts= joinGroupMessage.split(" ");
@@ -20,7 +20,9 @@ public class JoinGroup extends DAO{
         String groupname= messageParts[2];
         
         Connection con= super.getConnection();
-        PreparedStatement ps= con.prepareStatement("");
+        PreparedStatement ps= con.prepareStatement("insert into group_map (username, groupname) values (?,?)");
+        ps.setInt(1, username);
+        ps.setInt(2, groupname);
         QueryResult qr= super.executeQuery(con, ps);
         
         ArrayList <String>
