@@ -1,17 +1,24 @@
-import java.util.ArrayList;
-
 public class GroupManager {
-  
+
   // Feilds
-  ArrayList<User> users = new ArrayList<User>();
-  
-  
+
   // Constructors
-  public void GroupManger() {
-    users = null;
+  public GroupManager() {
   }
-  
-  
+
   // Functions
-  
+  public String groupRequest(String request) {
+    String[] a = request.split(" ");
+    switch(a[2]) {
+    case "make":
+      break;
+    case ("add"):
+      break;
+    case ("remove"):
+      break;
+    case ("delete"):
+      break;
+    }
+    return "";
+  }
 }
