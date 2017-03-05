@@ -1,5 +1,3 @@
-package com.squadup.hello;
-
 import java.util.ArrayList;
 
 public class QueryResult {            

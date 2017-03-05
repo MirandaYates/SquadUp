@@ -1,14 +1,10 @@
-package com.squadup.hello;
-
 import java.sql.*;
 import java.util.ArrayList;
 
-import com.remindme.server.PropertiesManager;
-
 public class DAO{
-	private static final String DB_URL = PropertiesManager.getInstance().getProperty("db_string");
-	private static final String USERNAME = PropertiesManager.getInstance().getProperty("db_user");
-	private static final String PASSWORD = PropertiesManager.getInstance().getProperty("db_password");
+	private static final String DB_URL = "";
+	private static final String USERNAME = "";
+	private static final String PASSWORD = "";
 
 
 	public DAO(){
@@ -46,6 +42,7 @@ public class DAO{
 	 *                                            <<"Release name 1", "date">, <"Release Name 2", "date">>
 	 */
 	public QueryResult executeQuery(Connection connection, PreparedStatement statement){
+		//System.out.println(statement);
 		ArrayList<ArrayList<String>> container = new ArrayList<ArrayList<String>>();
 		ArrayList<String> column_names = new ArrayList<String>();
 

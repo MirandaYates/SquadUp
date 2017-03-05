@@ -5,5 +5,5 @@ Hello, this is SquadUp. Check in.
 
 -Tyler here
 
-
+-brent is the man
 -Andy checking in
