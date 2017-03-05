@@ -8,8 +8,8 @@ import java.sql.SQLException;
 public class User extends DAO{
 	private int id;
 	private String name;
-	private Status status;
-	private String gps;
+	private Status status = new Status();
+	private String gps = new GPS();
 
 	public User(String username){
 		this.name = username;
