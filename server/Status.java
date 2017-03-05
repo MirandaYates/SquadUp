@@ -1,29 +1,49 @@
 import java.util.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 //Status object has getters and setters
-public class Status{
+public class Status extends DAO{
     private int status_code; //use -1, 0, 1 for bad, neutral, good
-    private String time_of_last_checkin;
     
-    public Status(String time){
-        this.status_code= 1;    //just made the group
-        this.time_of_last_checkin= //
+    public int getStatusCode(int u){
+        String sql = "select status from status where user_id = ?";
+        try{
+            Connection connection = super.getConnection();
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, u);
+            return executeQuery(connection, statement).getRow(0).get(0);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
     
-    public int getStatusCode(){
-        return this.status_code;
+    public String getStatusTime(int u){
+        String sql = "select datetime from status where user_id = ?";
+        try{
+            Connection connection = super.getConnection();
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, u);
+            return executeQuery(connection, statement).getRow(0).get(0);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
     
-    public String getTimeOfLastCheckin(){
-        return this.time_of_last_checkin;
-    }
-    
-    public void setStatusCode(int x){
+    public void setStatusCode(int u, int x){
         this.status_code= x;
-    }
-    
-    public void setTimeOfLastcheckin(String s){
-        this.time_of_last_checkin= s;
+        String sql = "insert into status (user_id, status, datetime) values (?, ?, now())"
+        try{
+            Connection connection = super.getConnection();
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, u);
+            statement.setString(2, x);
+            executeInsert(connection, statement);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 }
 
