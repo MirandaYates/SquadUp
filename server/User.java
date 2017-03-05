@@ -1,11 +1,14 @@
 //User Object
 //accessor methods for: name, id, status, gps
 //mutator method for: status, gps
+import java.sql.connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
-public class User extendsDAO{
+public class User extends DAO{
 	private int id;
 	private String name;
-	private Status status =new Status(0);
+	private Status status = new Status();
 	private String gps = null;
 
 	public User(String username){
