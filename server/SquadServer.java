@@ -34,6 +34,7 @@ public class SquadServer {
       break;
 
     case "create_group":
+      // create_group group_name
       CreateGroup c = new CreateGroup(request);
       break;
 
@@ -50,6 +51,8 @@ public class SquadServer {
       break;
 
     case "delete_group":
+      //delete_group group_name
+      DeleteGroup d = new DeleteGroup(request);
       break;
 
     case "req_gps":
