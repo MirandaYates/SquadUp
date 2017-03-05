@@ -23,16 +23,18 @@ public class Login extends DAO{
 		String password = messageParts[2];
 
 		Connection con = super.getConnection();
-		PreparedStatement ps = con.prepareStatement(""); //TODO ~~~~~~~~~~~~~~~~~~~~~~
+		PreparedStatement ps = con.prepareStatement("select * from users where username = ? and password = ?"); 
+		System.out.println("select * from users where username = ? and password = ?");
+		ps.setString(1, username);
+		ps.setString(2, password);
 		QueryResult qr = super.executeQuery(con, ps);
-
-		ArrayList <String> userNameList = qr.getRow(1);
-		if (!userNameList.contains(username)){
-			return "Login Failed Username";
+		
+		if (!qr.containsData()){
+			System.out.println("no user/password found :(");
+			return "failure";
+		}else{
+			System.out.println("user/pass found! :)");
+			return "success";
 		}
-		if (!qr.getRow(2).get(qr.getRow(1).indexOf(username)).equals(password)){
-			return "Login Failed Password";
-		}
-		return "Login Successful " + qr.getRow(0).get(qr.getRow(1).indexOf(username));
 	}
 }

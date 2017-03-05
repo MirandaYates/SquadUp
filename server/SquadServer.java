@@ -9,7 +9,7 @@ public class SquadServer {
   /*
    * we are puttin info into DB and pulling from DB (req_gps, req_status)
    */
-  public void serviceRequest(String request) throws SQLException {
+  public String serviceRequest(String request) {
     String[] request_array = request.split(" ");
 
     String request_option = request_array[0];
@@ -17,7 +17,11 @@ public class SquadServer {
     switch (request_option) {
     case "login":
       Login a = new Login();
-      a.loginRequest(request);
+      try{
+    	  return a.loginRequest(request);
+      }catch(Exception e){
+    	  e.printStackTrace();
+      }
       break;
     case "gps":
       // gps user_id long_coord lat_coord
@@ -30,6 +34,7 @@ public class SquadServer {
       break;
 
     case "create_group":
+      CreateGroup c = new CreateGroup(request);
       break;
 
     case "join_group":
@@ -53,6 +58,7 @@ public class SquadServer {
       break;
 
     }
+    return "failure servicing request";
 
   }
 }
