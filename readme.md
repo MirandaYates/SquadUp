@@ -1,9 +1,7 @@
-Hello, this is SquadUp. Check in.
+Hello, this is our Squad.
 
--Miranda checked in
--Kamaal checked in ;)
-
--Tyler here
-
--brent is the man
--Andy checking in
+-Miranda
+-Kamaal
+-Tyler
+-Brent
+-Andy
