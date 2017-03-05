@@ -38,6 +38,12 @@ public class SquadServer {
       break;
 
     case "join_group":
+            JoinGroup jp= new JoinGroup(request)
+            try{
+                return jp.joinGroupRequest(request);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
       break;
 
     case "leave_group":
